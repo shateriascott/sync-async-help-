@@ -13,21 +13,14 @@ function getPosts() {
     }, 1000);
 }
 
- function createPost(post, callback) {
+ function getRandomNumber(post, callback) {
      return new Promise((resolve, reject) => {
      setTimeout(()=> {
-        posts.push(post);
-
-        const error = false;
-
-        if(!error) {
-            resolve();
-        } else {
-            reject("Error: Something went wrong");
-        }
+        Math.floor(Math.random(post)
      }, 2000);
     });
 }
+getRandomNumber();
 
 //createPost({title: "Post Three", body: "This is post three"})
 //.then(getPosts)
@@ -44,15 +37,15 @@ function getPosts() {
 
 
 //Async/ Await / Fetch
-async function fetchUsers() {
-    const res = await fetch ("https://jsonplaceholder.typicode.com/users");
+async function fetchCities(name) {
+    const res = await fetch ("https://geocode.xyz/seattle?json=1");
 
     const data = await res.json();
 
-    console.log(data);
+    console.log();
 }
 
-fetchUsers();
+fetchCities();
 
 
 
